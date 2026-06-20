@@ -1,0 +1,58 @@
+{
+    "General Emergency Questions": {
+      "greeting": "Hello! Please describe your emergency so I can assist you.",
+      "assistance": "I’m here to assist. What kind of emergency are you experiencing?",
+      "emergency_number": "Dial 112 for emergency services in most countries. Check your local emergency number.",
+      "response_time": "Response times depend on traffic and emergency priority. Stay calm and wait for help.",
+      "cancellation": "If this is an error, please call emergency services directly to confirm cancellation.",
+      "safe_place": "Find a secure place, remain calm, and avoid dangerous areas until help arrives."
+    },
+    "Ambulance Related Queries": {
+      "ambulance_arrival": "An ambulance is on its way. Keep the patient stable and monitor breathing.",
+      "cpr": "Check for breathing. If absent, perform CPR while waiting for paramedics.",
+      "heart_attack": "Have the patient stay calm, chew aspirin if available, and avoid physical exertion.",
+      "seizure": "Do not restrain them. Move objects away to prevent injury and place them on their side after the seizure stops.",
+      "choking": "Encourage coughing. If they cannot breathe, perform abdominal thrusts (Heimlich maneuver).",
+      "fracture": "Immobilize the area, do not move the injured limb, and wait for medical help.",
+      "burns": "Run cool water over the burn for 10 minutes. Do not apply ice or ointments.",
+      "poisoning": "Do not induce vomiting unless instructed by poison control. Seek urgent medical help.",
+      "allergic_reaction": "If the person has an EpiPen, use it immediately. Call emergency services.",
+      "medical_emergency": "Medical assistance is on the way. Stay calm and describe the symptoms in detail.",
+      "asthma_attack": "Encourage the person to sit upright, stay calm, and take slow breaths. If they have an inhaler, let them use it.",
+      "stroke": "Call emergency services immediately. If available, help them chew aspirin and stay calm.",
+      "unconscious_person": "Check if they are breathing. If not, perform CPR while waiting for emergency help."
+    },
+    "Fire Brigade Related Queries": {
+      "fire_emergency": "Evacuate immediately and do not use elevators. The fire brigade is on its way.",
+      "gas_leak": "Do not turn on any electrical appliances. Open windows, evacuate, and call emergency services.",
+      "small_fire": "Use a fire extinguisher only if the fire is small. If spreading, evacuate immediately.",
+      "smoke_inhalation": "Stay low to avoid smoke, cover your nose with a damp cloth, and wait for firefighters.",
+      "electrical_fire": "Do not use water. Cut the power if safe and use a Class C fire extinguisher."
+    },
+    "Police Related Queries": {
+      "police_arrival": "Police are on their way. Find a safe place and do not engage with suspects.",
+      "robbery": "Do not resist. Try to note details about the suspect and report to the police immediately.",
+      "assault": "Get to a safe location and call the police immediately. Do not confront the attacker alone.",
+      "missing_person": "Report the missing person to the police with their last known location and description.",
+      "suspicious_activity": "Report any unusual behavior to the authorities. Stay vigilant and avoid risky situations.",
+      "stolen_items": "Report lost valuables to the police. Check lost-and-found departments nearby."
+    },
+    "Miscellaneous Serious Emergency Questions": {
+      "earthquake": "Drop, cover, and hold on. Stay indoors if safe or move to an open area away from buildings.",
+      "flood": "Move to higher ground immediately. Avoid driving or walking through floodwaters.",
+      "hurricane": "Secure loose objects, stay indoors, and follow official weather updates for evacuation instructions.",
+      "first_aid_kit": "A first aid kit should include bandages, antiseptic, pain relievers, gloves, and emergency contact info.",
+      "snake_bite": "Stay still, keep the affected area below heart level, and seek medical help immediately.",
+      "wound_care": "Wash the wound with soap and water, apply antiseptic, and seek medical help if needed.",
+      "panic_attack": "Take deep breaths, assess the situation logically, and focus on necessary actions.",
+      "disaster_preparedness": "Have a go-bag ready, know your local emergency numbers, and have an emergency plan in place.",
+      "lost_person": "Stay where you are if safe, use landmarks for orientation, and call for assistance if possible.",
+      "helping_others": "Ensure your safety first, call emergency services, and provide first aid if trained.",
+      "chemical_spill": "Leave the area immediately, cover your nose with a cloth, and avoid breathing in smoke.",
+      "power_outage": "Use flashlights instead of candles, unplug electrical devices, and stay updated on the outage status.",
+      "tsunami": "Move to higher ground immediately and stay away from coastal areas.",
+      "biological_hazard": "Stay indoors, close all windows, and follow official instructions on decontamination.",
+      "avalanche": "Try to stay on top, create an air pocket around your face, and signal for rescuers.",
+      "building_collapse": "If trapped, cover your mouth to avoid dust, stay still, and tap on objects to alert rescuers."
+    }
+  }

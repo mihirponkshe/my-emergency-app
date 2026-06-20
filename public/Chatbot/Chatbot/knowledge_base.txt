@@ -1,0 +1,57 @@
+[General Emergency Questions]
+Hello! Please describe your emergency so I can assist you.
+I’m here to assist. What kind of emergency are you experiencing?
+Dial 112 for emergency services in most countries. Check your local emergency number.
+Response times depend on traffic and emergency priority. Stay calm and wait for help.
+If this is an error, please call emergency services directly to confirm cancellation.
+Find a secure place, remain calm, and avoid dangerous areas until help arrives.
+
+[Ambulance Related Queries]
+An ambulance is on its way. Keep the patient stable and monitor breathing.
+Check for breathing. If absent, perform CPR while waiting for paramedics.
+Have the patient stay calm, chew aspirin if available, and avoid physical exertion.
+Clear the area, turn the person onto their side, and do not restrain them.
+Encourage coughing. If they cannot breathe, perform abdominal thrusts (Heimlich maneuver).
+Immobilize the area, do not move the injured limb, and wait for medical help.
+Run cool water over the burn for 10 minutes. Do not apply ice or ointments.
+Do not induce vomiting unless instructed by poison control. Seek urgent medical help.
+If the person has an EpiPen, use it immediately. Call emergency services.
+Medical assistance is on the way. Stay calm and describe the symptoms in detail.
+Encourage the person to sit upright, stay calm, and take slow breaths. If they have an inhaler, let them use it.
+Call emergency services immediately. If available, help them chew aspirin and stay calm.
+Check if they are breathing. If not, perform CPR while waiting for emergency help.
+Do not restrain them. Move objects away to prevent injury and place them on their side after the seizure stops.
+
+[Fire Brigade Related Queries]
+Evacuate immediately and do not use elevators. The fire brigade is on its way.
+Do not turn on any electrical appliances. Open windows, evacuate, and call emergency services.
+Use a fire extinguisher only if the fire is small. If spreading, evacuate immediately.
+Stay low to avoid smoke, cover your nose with a damp cloth, and wait for firefighters.
+Do not use water. Cut the power if safe and use a Class C fire extinguisher.
+
+[Police Related Queries]
+Police are on their way. Find a safe place and do not engage with suspects.
+Do not resist. Try to note details about the suspect and report to the police immediately.
+Get to a safe location and call the police immediately. Do not confront the attacker alone.
+Report the missing person to the police with their last known location and description.
+Call the police immediately and provide as many details as possible about the situation.
+Report any unusual behavior to the authorities. Stay vigilant and avoid risky situations.
+Report lost valuables to the police. Check lost-and-found departments nearby.
+
+[Miscellaneous Serious Emergency Questions]
+Drop, cover, and hold on. Stay indoors if safe or move to an open area away from buildings.
+Move to higher ground immediately. Avoid driving or walking through floodwaters.
+Secure loose objects, stay indoors, and follow official weather updates for evacuation instructions.
+A first aid kit should include bandages, antiseptic, pain relievers, gloves, and emergency contact info.
+Stay still, keep the affected area below heart level, and seek medical help immediately.
+Wash the wound with soap and water, apply antiseptic, and seek medical help if needed.
+Take deep breaths, assess the situation logically, and focus on necessary actions.
+Have a go-bag ready, know your local emergency numbers, and have an emergency plan in place.
+Stay where you are if safe, use landmarks for orientation, and call for assistance if possible.
+Ensure your safety first, call emergency services, and provide first aid if trained.
+Leave the area immediately, cover your nose with a cloth, and avoid breathing in smoke.
+Use flashlights instead of candles, unplug electrical devices, and stay updated on the outage status.
+Move to higher ground immediately and stay away from coastal areas.
+Stay indoors, close all windows, and follow official instructions on decontamination.
+Try to stay on top, create an air pocket around your face, and signal for rescuers.
+If trapped, cover your mouth to avoid dust, stay still, and tap on objects to alert rescuers.

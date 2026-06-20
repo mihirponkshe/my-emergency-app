@@ -1,0 +1,10 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: simple fade animation */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

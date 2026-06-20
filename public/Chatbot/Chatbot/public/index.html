@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emergency Assistance Chatbot</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .chat-container {
+      width: 100%;
+      max-width: 500px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 90vh;
+    }
+    .chat-header {
+      background: linear-gradient(135deg, #007bff, #00a8ff);
+      color: #fff;
+      padding: 1.2rem;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .chat-body {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      background: #f7f9fc;
+    }
+    .message {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+    .message.user {
+      align-self: flex-end;
+      text-align: right;
+    }
+    .message.bot {
+      align-self: flex-start;
+      text-align: left;
+    }
+    .message span {
+      display: inline-block;
+      padding: 0.5rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.95rem;
+      line-height: 1.3;
+    }
+    .message.user span {
+      background: #007bff;
+      color: #fff;
+    }
+    .message.bot span {
+      background: #e2e2e2;
+      color: #333;
+    }
+    .chat-input-area {
+      display: flex;
+      border-top: 1px solid #ddd;
+      background: #fff;
+      padding: 0.5rem;
+      align-items: center;
+    }
+    .chat-input-area input {
+      flex: 1;
+      border: none;
+      padding: 0.8rem;
+      font-size: 1rem;
+      outline: none;
+    }
+    .chat-input-area button {
+      background: #007bff;
+      border: none;
+      color: #fff;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-left: 0.5rem;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .chat-input-area button:hover {
+      background: #0056b3;
+    }
+    #micBtn {
+      padding: 0.8rem;
+      margin-left: 0.5rem;
+      background: #e0e0e0;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s ease;
+    }
+    #micBtn:hover {
+      background: #ccc;
+    }
+    #micBtn.recording {
+      background: red;
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0.5; }
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      Emergency Assistance Chatbot
+    </div>
+    <div class="chat-body" id="chat"></div>
+    <div class="chat-input-area">
+      <input type="text" id="userInput" placeholder="Enter your emergency message..." />
+      <button id="sendBtn">Send</button>
+      <button id="micBtn" title="Speak">🎤</button>
+    </div>
+  </div>
+
+  <script>
+    const chatDiv = document.getElementById("chat");
+    const inputField = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+    const micBtn = document.getElementById("micBtn");
+
+    function appendMessage(sender, text) {
+      const msgDiv = document.createElement("div");
+      msgDiv.className = "message " + sender;
+      const bubble = document.createElement("span");
+      bubble.textContent = sender === "user" ? text : text;
+      msgDiv.appendChild(bubble);
+      chatDiv.appendChild(msgDiv);
+      chatDiv.scrollTop = chatDiv.scrollHeight;
+    }
+
+    function speakText(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      speechSynthesis.speak(utterance);
+    }
+
+    // Auto-generated welcome message on page load
+    window.onload = function() {
+      const welcome = "Hello, I'm your emergency assistance chatbot. Please describe your emergency.";
+      appendMessage("bot", welcome);
+      speakText(welcome);
+    };
+
+    async function sendMessage(text) {
+      if (!text) return;
+      appendMessage("user", text);
+      inputField.value = "";
+      try {
+        const response = await fetch("/api/emergency-assist", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text })
+        });
+        const data = await response.json();
+        appendMessage("bot", data.response);
+        speakText(data.response);
+      } catch (err) {
+        appendMessage("bot", "Error contacting the server.");
+        speakText("Error contacting the server.");
+      }
+    }
+
+    sendBtn.addEventListener("click", () => sendMessage(inputField.value));
+    inputField.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") sendMessage(inputField.value);
+    });
+
+    micBtn.addEventListener("click", () => {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert("Speech recognition not supported in this browser.");
+        return;
+      }
+      
+      const recognition = new SpeechRecognition();
+      recognition.lang = "en-IN";
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      
+      let startTime;
+      let silenceTimer;
+      let maxTimer;
+      
+      micBtn.classList.add("recording");
+      
+      function resetSilenceTimer() {
+        if (silenceTimer) clearTimeout(silenceTimer);
+        if (Date.now() - startTime >= 5000) {
+          silenceTimer = setTimeout(() => {
+            recognition.stop();
+          }, 3000);
+        }
+      }
+      
+      recognition.onstart = () => {
+        startTime = Date.now();
+        resetSilenceTimer();
+        maxTimer = setTimeout(() => {
+          recognition.stop();
+        }, 10000);
+      };
+
+      recognition.onresult = function(event) {
+        let finalTranscript = "";
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          if (event.results[i].isFinal) {
+            finalTranscript += event.results[i][0].transcript;
+          }
+        }
+        if (finalTranscript) {
+          inputField.value = finalTranscript;
+          resetSilenceTimer();
+        }
+      };
+
+      recognition.onerror = function(event) {
+        console.error("Speech recognition error:", event.error);
+        appendMessage("bot", "Sorry, I couldn't understand you.");
+        speakText("Sorry, I couldn't understand you.");
+        micBtn.classList.remove("recording");
+      };
+
+      recognition.onend = function() {
+        micBtn.classList.remove("recording");
+        clearTimeout(maxTimer);
+        clearTimeout(silenceTimer);
+        if (inputField.value.trim()) {
+          sendMessage(inputField.value);
+        }
+      };
+
+      recognition.start();
+    });
+  </script>
+</body>
+</html>
