@@ -7,10 +7,15 @@ import axios from "axios";
 // Load the knowledge base from JSON once at startup.
 let knowledgeBase = {};
 try {
-  const kbPath = path.join(process.cwd(), "Chatbot", "Chatbot", "knowledge_base.json");
-  const data = fs.readFileSync(kbPath, "utf8");
-  knowledgeBase = JSON.parse(data);
-  console.log("📚 Knowledge base loaded.");
+  const dirName = "Chatbot";
+  const kbPath = path.join(process.cwd(), dirName, dirName, "knowledge_base.json");
+  if (fs.existsSync(kbPath)) {
+    const data = fs.readFileSync(kbPath, "utf8");
+    knowledgeBase = JSON.parse(data);
+    console.log("📚 Knowledge base loaded.");
+  } else {
+    console.log("📚 Knowledge base file not found, skipping.");
+  }
 } catch (error) {
   console.error("🚨 Error loading knowledge base:", error);
 }
